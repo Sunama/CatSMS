@@ -5,7 +5,7 @@ RSpec.describe CatSMS do
 
   it 'THSMS send' do
     sms = CatSMS::SMS.new :thsms, { username: '', password: '' }
-    status = sms.send('0000', '0942828425', 'test message')
+    status = sms.send '0000', '0942828425', 'test message'
 
     expect(status).to eq true
   end

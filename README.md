@@ -1,8 +1,10 @@
 # CatSMS
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/CatSMS`. To experiment with that code, run `bin/console` for an interactive prompt.
+SMS API for multiple SMS Provider. But for currently we support only 1 provider in Thailand
 
-TODO: Delete this and the text above, and describe your gem
+Supported provider
+
+* THSMS - https://thsms.com
 
 ## Installation
 
@@ -22,7 +24,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+sms = CatSMS::SMS.new :thsms, { username: 'username', password: 'password' }
+
+# Send SMS by sms.send(from, telephone, message)
+status = sms.send('0000', '09428284xx', 'test message')
+
+# Check SMS Credit left return in form { success: Boolean, credit: Integer }
+credit = sms.credit
+```
 
 ## Development
 
@@ -32,7 +42,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/CatSMS. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Sunama/CatSMS. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -40,4 +50,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the CatSMS project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/CatSMS/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the CatSMS project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/Sunama/CatSMS/blob/master/CODE_OF_CONDUCT.md).
