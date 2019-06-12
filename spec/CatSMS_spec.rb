@@ -3,7 +3,10 @@ RSpec.describe CatSMS do
     expect(CatSMS::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it 'THSMS' do
+    sms = CatSMS::SMS.new :thsms, { username: '', password: '' }
+    credit = sms.credit
+
+    expect(credit[:success]).to eq true
   end
 end
