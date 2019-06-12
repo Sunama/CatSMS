@@ -3,7 +3,7 @@ require 'nokogiri'
 
 module CatSMS
   class THSMS
-    def self.send(from, message, username, password)
+    def self.send(from, telephone, message, username, password)
       response = Typhoeus.post 'http://www.thsms.com/api/rest', body: {
         method: 'send',
         username: username,

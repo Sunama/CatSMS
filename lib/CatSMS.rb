@@ -3,9 +3,6 @@ require 'CatSMS/version'
 require 'CatSMS/THSMS'
 
 module CatSMS
-  class Error < StandardError; end
-  # Your code goes here...
-
   class SMS
     attr_accessor :adapter
     attr_accessor :username
@@ -22,9 +19,9 @@ module CatSMS
       end
     end
 
-    def send(from, message)
+    def send(from, telephone, message)
       if self.adapter == :thsms
-        THSMS.send from, message, self.username, self.password
+        THSMS.send from, telephone, message, self.username, self.password
       end
     end
 
